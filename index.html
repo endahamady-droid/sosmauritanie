@@ -12,7 +12,6 @@
 <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <!-- ===================== HEADER ===================== -->
     <header class="site-header">
         <div class="header-inner">
             <div class="brand">
@@ -52,7 +51,6 @@
     </header>
 
     <main id="contenu">
-        <!-- ===================== HERO ===================== -->
         <section class="hero" aria-label="Bannière">
             <div class="hero-content">
                 <h1 data-i18n="hero_title">SOS Boutique</h1>
@@ -71,7 +69,6 @@
             </div>
         </section>
 
-        <!-- ===================== CATEGORIES ===================== -->
         <section id="categories" class="categories" aria-label="Catégories">
             <header class="section-header">
                 <h2 data-i18n="sec_categories">Catégories</h2>
@@ -82,34 +79,29 @@
                 <article class="category-card">
                     <h3 data-i18n="cat_tshirts">T-shirts</h3>
                     <p data-i18n="cat_tshirts_sub">Basics, imprimés, tendances.</p>
-                    <button class="link catbtn" type="button" data-category="tshirts"
-                        data-i18n="explore">Explorer</button>
+                    <button class="link catbtn" type="button" data-category="tshirts" data-i18n="explore">Explorer</button>
                 </article>
 
                 <article class="category-card">
                     <h3 data-i18n="cat_chemises">Chemises</h3>
                     <p data-i18n="cat_chemises_sub">Classiques, carreaux, style.</p>
-                    <button class="link catbtn" type="button" data-category="chemises"
-                        data-i18n="explore">Explorer</button>
+                    <button class="link catbtn" type="button" data-category="chemises" data-i18n="explore">Explorer</button>
                 </article>
 
                 <article class="category-card">
                     <h3 data-i18n="cat_shoes">Chaussures</h3>
                     <p data-i18n="cat_shoes_sub">Running, sneakers, confort.</p>
-                    <button class="link catbtn" type="button" data-category="chaussures"
-                        data-i18n="explore">Explorer</button>
+                    <button class="link catbtn" type="button" data-category="chaussures" data-i18n="explore">Explorer</button>
                 </article>
 
                 <article class="category-card">
                     <h3 data-i18n="cat_acc">Accessoires</h3>
                     <p data-i18n="cat_acc_sub">À venir…</p>
-                    <button class="link catbtn" type="button" data-category="accessoires"
-                        data-i18n="explore">Explorer</button>
+                    <button class="link catbtn" type="button" data-category="accessoires" data-i18n="explore">Explorer</button>
                 </article>
             </div>
         </section>
 
-        <!-- ===================== TOOLBAR / FILTERS ===================== -->
         <section class="toolbar" aria-label="Filtres et tri">
             <form class="filters" action="#" method="get" onsubmit="return false;">
                 <fieldset>
@@ -151,7 +143,6 @@
             </form>
         </section>
 
-        <!-- ===================== PRODUCTS ===================== -->
         <section id="produits" class="products" aria-label="Produits">
             <header class="section-header">
                 <h2 data-i18n="sec_products">Produits</h2>
@@ -162,9 +153,23 @@
             </header>
 
             <div class="product-grid" id="productGrid"></div>
+            <p id="noProductsMessage" class="empty-state" style="display:none;" data-i18n="no_products">
+                Aucun produit trouvé.
+            </p>
         </section>
 
-        <!-- ===================== CONTACT ===================== -->
+        <section id="favoris" class="favorites" aria-label="Favoris">
+            <header class="section-header">
+                <h2 data-i18n="favorites">Favoris</h2>
+                <p class="muted" data-i18n="favorites_sub">Tes produits favoris apparaissent ici.</p>
+            </header>
+
+            <div class="product-grid" id="favoritesGrid"></div>
+            <p id="favoritesEmpty" class="empty-state" data-i18n="favorites_empty">
+                Tu n'as pas encore de favoris.
+            </p>
+        </section>
+
         <section id="contact" class="contact" aria-label="Contact">
             <header class="section-header">
                 <h2 data-i18n="sec_contact">Contact</h2>
@@ -185,7 +190,6 @@
         </section>
     </main>
 
-    <!-- ===================== PRODUCT MODAL ===================== -->
     <div class="pmodal-overlay" id="pmodalOverlay" hidden></div>
 
     <section class="pmodal" id="pmodal" aria-label="Détails produit" hidden>
@@ -207,7 +211,6 @@
 
                 <div class="pmodal-price" id="pmodalPrice"></div>
 
-                <!-- Options -->
                 <div class="opt-grid">
                     <label class="opt">
                         <span data-i18n="size">Taille</span>
@@ -222,11 +225,9 @@
 
                 <div class="pmodal-actions">
                     <button type="button" id="pmodalAddToCart" data-i18n="add_to_cart">Ajouter au panier</button>
-                    <button type="button" id="pmodalAskWa" class="ghost" data-i18n="ask_product">Question sur ce
-                        produit</button>
+                    <button type="button" id="pmodalAskWa" class="ghost" data-i18n="ask_product">Question sur ce produit</button>
                 </div>
 
-                <!-- Comments -->
                 <div class="reviews">
                     <div class="reviews-head">
                         <strong data-i18n="reviews">Commentaires</strong>
@@ -242,12 +243,10 @@
                         <button type="button" id="reviewAddBtn" class="btn" data-i18n="add_comment">Ajouter</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ===================== CART ===================== -->
     <aside id="panier" class="cart" aria-label="Panier">
         <header class="cart-header">
             <h2 data-i18n="your_cart">Votre panier</h2>
@@ -267,7 +266,6 @@
         </footer>
     </aside>
 
-    <!-- ===================== CHECKOUT MODAL ===================== -->
     <div class="checkout-overlay" id="checkoutOverlay" hidden></div>
 
     <section class="checkout-modal" id="checkoutModal" aria-label="Paiement" hidden>
@@ -321,7 +319,6 @@
         </form>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">
         <p class="footer-bottom">
             © <span id="year">2026</span> <span data-i18n="brand2">SOS Boutique</span>.
@@ -330,22 +327,40 @@
     </footer>
 
     <script>
-        /**********************
-         * Config
-         **********************/
         const WHATSAPP_NUMBER = "22222000357";
-        const CART_KEY = "sos_cart_v2";
+        const CART_KEY = "sos_cart_v3";
         const REVIEWS_KEY = "sos_reviews_v1";
+        const FAVORITES_KEY = "sos_favorites_v1";
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        /**********************
-         * i18n (simple)
-         **********************/
+        const $ = (sel, root = document) => root.querySelector(sel);
+        const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+        function getCurrentLang() {
+            return document.documentElement.lang || localStorage.getItem("sos_lang") || "fr";
+        }
+
+        function formatMoney(amount, currency = "€") {
+            const n = Number(amount) || 0;
+            return `${n.toFixed(2).replace(".", ",")} ${currency}`;
+        }
+
+        function escapeHtml(s) {
+            return String(s || "")
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+        }
+
         const I18N = {
             fr: {
                 brand: "Boutique", brand2: "SOS Boutique",
                 search_label: "Rechercher", search_ph: "Rechercher un produit…", search_btn: "Rechercher",
-                support: "Support WhatsApp", favorites: "Favoris", cart: "Panier",
+                support: "Support WhatsApp", favorites: "Favoris", favorites_sub: "Tes produits favoris apparaissent ici.",
+                favorites_empty: "Tu n'as pas encore de favoris.",
+                cart: "Panier",
                 hero_title: "SOS Boutique", hero_sub: "Vêtements & chaussures — commande rapide via WhatsApp.",
                 cta_categories: "Voir les catégories", cta_contact: "Contact",
                 h_fast: "Livraison rapide", h_safe: "Paiement sécurisé", h_support: "Support 7j/7",
@@ -360,6 +375,7 @@
                 sort: "Trier", sort_label: "Tri", sort_pop: "Popularité", sort_new: "Nouveautés",
                 sort_asc: "Prix croissant", sort_desc: "Prix décroissant", apply: "Appliquer", reset: "Réinitialiser",
                 sec_products: "Produits", products_hint: "Clique sur une catégorie (Explorer) pour afficher les produits.",
+                no_products: "Aucun produit trouvé.",
                 sec_contact: "Contact", sec_contact_sub: "Une question ? Écris-nous.", wa: "WhatsApp Business :",
                 ask_support: "Poser une question sur WhatsApp",
                 product_details: "Détails produit", close: "Fermer",
@@ -367,6 +383,8 @@
                 add_to_cart: "Ajouter au panier",
                 ask_product: "Question sur ce produit",
                 reviews: "Commentaires",
+                no_reviews: "Aucun commentaire pour le moment.",
+                review_client: "Client",
                 name_ph2: "Ton nom", comment_ph: "Écris un commentaire...", add_comment: "Ajouter",
                 your_cart: "Votre panier", empty_cart: "Votre panier est vide.", total: "Total", checkout: "Passer au paiement",
                 confirm_order: "Confirmer la commande",
@@ -377,12 +395,41 @@
                 note: "Note (optionnel)", note_ph: "Ex: Taille M, livraison après 17h...",
                 confirm_pay: "Confirmer paiement → WhatsApp", cancel: "Annuler",
                 hint: "En confirmant, un message WhatsApp sera préparé et envoyé à SOS STORE.",
-                rights: "Tous droits réservés."
+                rights: "Tous droits réservés.",
+                remove: "Retirer",
+                qty: "Qté",
+                stock_yes: "En stock",
+                stock_no: "Rupture",
+                badge_new: "Nouveau",
+                badge_bestseller: "Best-seller",
+                badge_trend: "Tendance",
+                badge_promo: "Promo",
+                badge_oversize: "Oversize",
+                badge_classic: "Classique",
+                badge_comfort: "Confort",
+                alert_empty_cart: "Votre panier est vide.",
+                alert_checkout_fields: "Veuillez remplir Nom, Téléphone et Adresse.",
+                wa_hello: "Bonjour SOS STORE, j'ai une question sur ce produit :",
+                wa_size: "Taille",
+                wa_color: "Couleur",
+                wa_order_title: "🛒 SOS STORE — Commande",
+                wa_products: "📦 Produits",
+                wa_total: "💰 Total",
+                wa_client: "👤 Client",
+                wa_name: "Nom",
+                wa_phone: "Téléphone",
+                wa_address: "Adresse",
+                wa_payment: "Paiement",
+                wa_note: "Note",
+                added_fav_aria: "Retirer des favoris",
+                add_fav_aria: "Ajouter aux favoris"
             },
             en: {
                 brand: "Store", brand2: "SOS Store",
                 search_label: "Search", search_ph: "Search a product…", search_btn: "Search",
-                support: "WhatsApp Support", favorites: "Favorites", cart: "Cart",
+                support: "WhatsApp Support", favorites: "Favorites", favorites_sub: "Your favorite products appear here.",
+                favorites_empty: "You don't have favorites yet.",
+                cart: "Cart",
                 hero_title: "SOS Store", hero_sub: "Clothes & shoes — fast ordering via WhatsApp.",
                 cta_categories: "View categories", cta_contact: "Contact",
                 h_fast: "Fast delivery", h_safe: "Secure payment", h_support: "Support 7/7",
@@ -397,6 +444,7 @@
                 sort: "Sort", sort_label: "Sort by", sort_pop: "Popularity", sort_new: "New",
                 sort_asc: "Price low to high", sort_desc: "Price high to low", apply: "Apply", reset: "Reset",
                 sec_products: "Products", products_hint: "Click a category (Explore) to show products.",
+                no_products: "No products found.",
                 sec_contact: "Contact", sec_contact_sub: "Any question? Message us.", wa: "WhatsApp Business:",
                 ask_support: "Ask on WhatsApp",
                 product_details: "Product details", close: "Close",
@@ -404,6 +452,8 @@
                 add_to_cart: "Add to cart",
                 ask_product: "Question about this product",
                 reviews: "Reviews",
+                no_reviews: "No comments yet.",
+                review_client: "Customer",
                 name_ph2: "Your name", comment_ph: "Write a comment…", add_comment: "Add",
                 your_cart: "Your cart", empty_cart: "Your cart is empty.", total: "Total", checkout: "Checkout",
                 confirm_order: "Confirm order",
@@ -414,12 +464,41 @@
                 note: "Note (optional)", note_ph: "e.g. Size M, delivery after 5pm...",
                 confirm_pay: "Confirm → WhatsApp", cancel: "Cancel",
                 hint: "When confirming, a WhatsApp message will be prepared and sent to SOS STORE.",
-                rights: "All rights reserved."
+                rights: "All rights reserved.",
+                remove: "Remove",
+                qty: "Qty",
+                stock_yes: "In stock",
+                stock_no: "Out of stock",
+                badge_new: "New",
+                badge_bestseller: "Best-seller",
+                badge_trend: "Trending",
+                badge_promo: "Promo",
+                badge_oversize: "Oversize",
+                badge_classic: "Classic",
+                badge_comfort: "Comfort",
+                alert_empty_cart: "Your cart is empty.",
+                alert_checkout_fields: "Please fill in Name, Phone and Address.",
+                wa_hello: "Hello SOS STORE, I have a question about this product:",
+                wa_size: "Size",
+                wa_color: "Color",
+                wa_order_title: "🛒 SOS STORE — Order",
+                wa_products: "📦 Products",
+                wa_total: "💰 Total",
+                wa_client: "👤 Customer",
+                wa_name: "Name",
+                wa_phone: "Phone",
+                wa_address: "Address",
+                wa_payment: "Payment",
+                wa_note: "Note",
+                added_fav_aria: "Remove from favorites",
+                add_fav_aria: "Add to favorites"
             },
             ar: {
                 brand: "المتجر", brand2: "متجر SOS",
                 search_label: "بحث", search_ph: "ابحث عن منتج…", search_btn: "بحث",
-                support: "دعم واتساب", favorites: "المفضلة", cart: "السلة",
+                support: "دعم واتساب", favorites: "المفضلة", favorites_sub: "منتجاتك المفضلة تظهر هنا.",
+                favorites_empty: "ليس لديك منتجات مفضلة بعد.",
+                cart: "السلة",
                 hero_title: "متجر SOS", hero_sub: "ملابس وأحذية — طلب سريع عبر واتساب.",
                 cta_categories: "عرض الفئات", cta_contact: "تواصل",
                 h_fast: "توصيل سريع", h_safe: "دفع آمن", h_support: "دعم 7/7",
@@ -434,6 +513,7 @@
                 sort: "ترتيب", sort_label: "الترتيب", sort_pop: "الأكثر شعبية", sort_new: "الأحدث",
                 sort_asc: "السعر من الأقل", sort_desc: "السعر من الأعلى", apply: "تطبيق", reset: "إعادة ضبط",
                 sec_products: "المنتجات", products_hint: "اضغط على فئة (استكشاف) لإظهار المنتجات.",
+                no_products: "لم يتم العثور على منتجات.",
                 sec_contact: "تواصل", sec_contact_sub: "عندك سؤال؟ راسلنا.", wa: "واتساب للأعمال:",
                 ask_support: "اسأل على واتساب",
                 product_details: "تفاصيل المنتج", close: "إغلاق",
@@ -441,6 +521,8 @@
                 add_to_cart: "أضف للسلة",
                 ask_product: "سؤال عن المنتج",
                 reviews: "التعليقات",
+                no_reviews: "لا توجد تعليقات حالياً.",
+                review_client: "عميل",
                 name_ph2: "اسمك", comment_ph: "اكتب تعليقاً...", add_comment: "إضافة",
                 your_cart: "سلة المشتريات", empty_cart: "السلة فارغة.", total: "المجموع", checkout: "إتمام الطلب",
                 confirm_order: "تأكيد الطلب",
@@ -451,9 +533,41 @@
                 note: "ملاحظة", note_ph: "مثال: المقاس M، بعد 5 مساءً...",
                 confirm_pay: "تأكيد → واتساب", cancel: "إلغاء",
                 hint: "عند التأكيد سيتم تجهيز رسالة واتساب وإرسالها إلى SOS STORE.",
-                rights: "جميع الحقوق محفوظة."
+                rights: "جميع الحقوق محفوظة.",
+                remove: "حذف",
+                qty: "الكمية",
+                stock_yes: "متوفر",
+                stock_no: "غير متوفر",
+                badge_new: "جديد",
+                badge_bestseller: "الأكثر مبيعاً",
+                badge_trend: "رائج",
+                badge_promo: "عرض",
+                badge_oversize: "واسع",
+                badge_classic: "كلاسيكي",
+                badge_comfort: "راحة",
+                alert_empty_cart: "السلة فارغة.",
+                alert_checkout_fields: "يرجى ملء الاسم والهاتف والعنوان.",
+                wa_hello: "مرحباً SOS STORE، لدي سؤال حول هذا المنتج:",
+                wa_size: "المقاس",
+                wa_color: "اللون",
+                wa_order_title: "🛒 SOS STORE — طلب",
+                wa_products: "📦 المنتجات",
+                wa_total: "💰 المجموع",
+                wa_client: "👤 العميل",
+                wa_name: "الاسم",
+                wa_phone: "الهاتف",
+                wa_address: "العنوان",
+                wa_payment: "الدفع",
+                wa_note: "ملاحظة",
+                added_fav_aria: "إزالة من المفضلة",
+                add_fav_aria: "إضافة إلى المفضلة"
             }
         };
+
+        function t(key) {
+            const lang = getCurrentLang();
+            return (I18N[lang] && I18N[lang][key]) || I18N.fr[key] || key;
+        }
 
         function applyI18n(lang) {
             const dict = I18N[lang] || I18N.fr;
@@ -470,208 +584,99 @@
 
             document.documentElement.lang = lang;
             document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+
+            renderProducts();
+            renderFavorites();
+            renderCart();
+
+            if (currentModalProduct) openProductModal(currentModalProduct.sku);
         }
 
-        const langBtns = Array.from(document.querySelectorAll(".langbtn"));
-        langBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                langBtns.forEach(x => x.classList.remove("active"));
-                btn.classList.add("active");
-                const lang = btn.getAttribute("data-lang") || "fr";
-                localStorage.setItem("sos_lang", lang);
-                applyI18n(lang);
-            });
-        });
-        applyI18n(localStorage.getItem("sos_lang") || "fr");
-
-        /**********************
-         * Produits (avec tailles + couleurs + photos)
-         **********************/
         const PRODUCTS = [
-            {
-                sku: "TSH-01",
-                name: "T-shirt Noir Basic",
-                category: "tshirts",
-                price: 19.90,
-                currency: "€",
-                stock: true,
-                badge: "Nouveau",
-                desc: "T-shirt confortable, coupe moderne, tissu doux.",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["Noir", "Blanc"],
-                images: ["images/tshirt01/01.png", "images/tshirt01/02.png"],
-                popularity: 8,
-                isNew: true
-            },
-            {
-                sku: "TSH-03",
-                name: "Polo Noir",
-                category: "tshirts",
-                price: 24.90,
-                currency: "€",
-                stock: true,
-                badge: "Best-seller",
-                desc: "Polo sobre, parfait au quotidien, col élégant.",
-                sizes: ["M", "L", "XL"],
-                colors: ["Noir"],
-                images: ["images/tshirt03/01.png", "images/tshirt03/02.png"],
-                popularity: 10,
-                isNew: false
-            },
-            {
-                sku: "TSH-04",
-                name: "T-shirt Full Throttle",
-                category: "tshirts",
-                price: 29.90,
-                currency: "€",
-                stock: true,
-                badge: "Tendance",
-                desc: "Imprimé dos, style racing. Très beau rendu.",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["Blanc", "Noir"],
-                images: ["images/tshirt04/01.png", "images/tshirt04/02.png"],
-                popularity: 9,
-                isNew: true
-            },
-            {
-                sku: "TSH-05",
-                name: "T-shirt Vert Mint",
-                category: "tshirts",
-                price: 21.90,
-                currency: "€",
-                stock: true,
-                badge: "Promo",
-                desc: "Couleur mint, léger et agréable.",
-                sizes: ["S", "M", "L"],
-                colors: ["Vert Mint"],
-                images: ["images/tshirt05/01.png", "images/tshirt05/02.png"],
-                popularity: 7,
-                isNew: false
-            },
-            {
-                sku: "TSH-06",
-                name: "Oversize Noir",
-                category: "tshirts",
-                price: 22.90,
-                currency: "€",
-                stock: true,
-                badge: "Oversize",
-                desc: "Coupe oversize, look street moderne.",
-                sizes: ["M", "L", "XL"],
-                colors: ["Noir"],
-                images: ["images/tshirt06/01.png", "images/tshirt06/02.png"],
-                popularity: 6,
-                isNew: true
-            },
-
-            // ⚠️ Ajoute ces dossiers si tu veux afficher ces produits :
-            // images/chemise01/01.png , images/chemise01/02.png
-            {
-                sku: "CHM-01",
-                name: "Chemise à carreaux",
-                category: "chemises",
-                price: 34.90,
-                currency: "€",
-                stock: true,
-                badge: "Classique",
-                desc: "Chemise à carreaux, style casual, coupe confortable.",
-                sizes: ["M", "L", "XL"],
-                colors: ["Rouge/Noir", "Bleu/Blanc"],
-                images: ["images/chemise01/01.png", "images/chemise01/02.png"],
-                popularity: 8,
-                isNew: false
-            },
-
-            // ⚠️ Ajoute ces dossiers si tu veux afficher ces produits :
-            // images/shoes01/01.png , images/shoes01/02.png
-            {
-                sku: "SH-01",
-                name: "Running Noir",
-                category: "chaussures",
-                price: 49.90,
-                currency: "€",
-                stock: true,
-                badge: "Confort",
-                desc: "Running confortable pour tous les jours.",
-                sizes: ["40", "41", "42", "43", "44"],
-                colors: ["Noir"],
-                images: ["images/shoes01/01.png", "images/shoes01/02.png"],
-                popularity: 9,
-                isNew: true
-            },
-            {
-                sku: "SH-02",
-                name: "Sneakers Noir (pack photos)",
-                category: "chaussures",
-                price: 54.90,
-                currency: "€",
-                stock: true,
-                badge: "Nouveau",
-                desc: "Sneakers avec plusieurs angles, style premium.",
-                sizes: ["40", "41", "42", "43", "44"],
-                colors: ["Noir", "Gris"],
-                images: ["images/shoes02/01.png", "images/shoes02/02.png", "images/shoes02/03.png", "images/shoes02/04.png"],
-                popularity: 7,
-                isNew: true
-            }
+            { sku: "TSH-01", name: "T-shirt Noir Basic", category: "tshirts", price: 19.90, currency: "€", stock: true, badgeKey: "badge_new", desc: "T-shirt confortable, coupe moderne, tissu doux.", sizes: ["S", "M", "L", "XL"], colors: ["Noir", "Blanc"], images: ["images/tshirt01/01.png", "images/tshirt01/02.png"], popularity: 8, isNew: true },
+            { sku: "TSH-03", name: "Polo Noir", category: "tshirts", price: 24.90, currency: "€", stock: true, badgeKey: "badge_bestseller", desc: "Polo sobre, parfait au quotidien, col élégant.", sizes: ["M", "L", "XL"], colors: ["Noir"], images: ["images/tshirt03/01.png", "images/tshirt03/02.png"], popularity: 10, isNew: false },
+            { sku: "TSH-04", name: "T-shirt Full Throttle", category: "tshirts", price: 29.90, currency: "€", stock: true, badgeKey: "badge_trend", desc: "Imprimé dos, style racing. Très beau rendu.", sizes: ["S", "M", "L", "XL"], colors: ["Blanc", "Noir"], images: ["images/tshirt04/01.png", "images/tshirt04/02.png"], popularity: 9, isNew: true },
+            { sku: "TSH-05", name: "T-shirt Vert Mint", category: "tshirts", price: 21.90, currency: "€", stock: true, badgeKey: "badge_promo", desc: "Couleur mint, léger et agréable.", sizes: ["S", "M", "L"], colors: ["Vert Mint"], images: ["images/tshirt05/01.png", "images/tshirt05/02.png"], popularity: 7, isNew: false },
+            { sku: "TSH-06", name: "Oversize Noir", category: "tshirts", price: 22.90, currency: "€", stock: true, badgeKey: "badge_oversize", desc: "Coupe oversize, look street moderne.", sizes: ["M", "L", "XL"], colors: ["Noir"], images: ["images/tshirt06/01.png", "images/tshirt06/02.png"], popularity: 6, isNew: true },
+            { sku: "CHM-01", name: "Chemise à carreaux", category: "chemises", price: 34.90, currency: "€", stock: true, badgeKey: "badge_classic", desc: "Chemise à carreaux, style casual, coupe confortable.", sizes: ["M", "L", "XL"], colors: ["Rouge/Noir", "Bleu/Blanc"], images: ["images/chemise01/01.png", "images/chemise01/02.png"], popularity: 8, isNew: false },
+            { sku: "SH-01", name: "Running Noir", category: "chaussures", price: 49.90, currency: "€", stock: true, badgeKey: "badge_comfort", desc: "Running confortable pour tous les jours.", sizes: ["40", "41", "42", "43", "44"], colors: ["Noir"], images: ["images/shoes01/01.png", "images/shoes01/02.png"], popularity: 9, isNew: true },
+            { sku: "SH-02", name: "Sneakers Noir (pack photos)", category: "chaussures", price: 54.90, currency: "€", stock: true, badgeKey: "badge_new", desc: "Sneakers avec plusieurs angles, style premium.", sizes: ["40", "41", "42", "43", "44"], colors: ["Noir", "Gris"], images: ["images/shoes02/01.png", "images/shoes02/02.png", "images/shoes02/03.png", "images/shoes02/04.png"], popularity: 7, isNew: true }
         ];
-
-        const $ = (sel, root = document) => root.querySelector(sel);
-        const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-
-        function formatMoney(amount, currency = "€") {
-            const n = Number(amount) || 0;
-            return `${n.toFixed(2).replace(".", ",")} ${currency}`;
-        }
 
         function catLabel(cat) {
             return ({
-                tshirts: "T-shirts",
-                chemises: "Chemises",
-                chaussures: "Chaussures",
-                accessoires: "Accessoires"
+                tshirts: t("cat_tshirts"),
+                chemises: t("cat_chemises"),
+                chaussures: t("cat_shoes"),
+                accessoires: t("cat_acc")
             })[cat] || cat;
         }
 
-        /**********************
-         * Affichage produits
-         **********************/
+        function loadFavorites() {
+            try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]"); }
+            catch { return []; }
+        }
+
+        function saveFavorites(list) {
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(list));
+        }
+
+        function isFavorite(sku) {
+            return loadFavorites().includes(sku);
+        }
+
+        function toggleFavorite(sku) {
+            const favs = loadFavorites();
+            const index = favs.indexOf(sku);
+            if (index >= 0) favs.splice(index, 1);
+            else favs.push(sku);
+            saveFavorites(favs);
+            renderProducts();
+            renderFavorites();
+        }
+
+        const favoritesGrid = $("#favoritesGrid");
+        const favoritesEmpty = $("#favoritesEmpty");
         const productGrid = $("#productGrid");
         const productsHint = $("#productsHint");
         const productsTitle = $("#productsTitle");
+        const noProductsMessage = $("#noProductsMessage");
 
         let currentCategory = "";
         let productsVisible = false;
 
         function productCardTemplate(p) {
             const img1 = p.images?.[0] || "";
+            const favorite = isFavorite(p.sku);
+
             return `
-        <article class="product-card">
-          <button type="button" class="product-media" data-open-product="${p.sku}" aria-label="Ouvrir ${p.name}">
-            <img src="${img1}" alt="${p.name}" loading="lazy" />
-          </button>
+                <article class="product-card">
+                    <button type="button" class="product-media" data-open-product="${escapeHtml(p.sku)}" aria-label="Ouvrir ${escapeHtml(p.name)}">
+                        <img src="${escapeHtml(img1)}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.png';" />
+                    </button>
 
-          <div class="product-body">
-            <h3 class="product-title">
-              <button type="button" class="title-btn" data-open-product="${p.sku}">${p.name}</button>
-            </h3>
+                    <div class="product-body">
+                        <h3 class="product-title">
+                            <button type="button" class="title-btn" data-open-product="${escapeHtml(p.sku)}">${escapeHtml(p.name)}</button>
+                        </h3>
 
-            <p class="product-desc">${p.desc || ""}</p>
+                        <p class="product-desc">${escapeHtml(p.desc || "")}</p>
 
-            <div class="product-meta">
-              <p class="price">${formatMoney(p.price, p.currency)}</p>
-              <p class="badge">${p.badge || (p.stock ? "En stock" : "Rupture")}</p>
-            </div>
+                        <div class="product-meta">
+                            <p class="price">${formatMoney(p.price, p.currency)}</p>
+                            <p class="badge">${t(p.badgeKey || (p.stock ? "stock_yes" : "stock_no"))}</p>
+                        </div>
 
-            <div class="product-actions">
-              <button type="button" class="add-to-cart" data-sku="${p.sku}" data-i18n="add_to_cart">
-                Ajouter au panier
-              </button>
-              <button type="button" class="mini" aria-label="Ajouter aux favoris">❤</button>
-            </div>
-          </div>
-        </article>
-      `;
+                        <div class="product-actions">
+                            <button type="button" class="add-to-cart" data-sku="${escapeHtml(p.sku)}">${t("add_to_cart")}</button>
+                            <button type="button"
+                                    class="mini favorite-btn ${favorite ? "active" : ""}"
+                                    data-favorite-sku="${escapeHtml(p.sku)}"
+                                    aria-label="${favorite ? t("added_fav_aria") : t("add_fav_aria")}">❤</button>
+                        </div>
+                    </div>
+                </article>
+            `;
         }
 
         function applySort(list, sortValue) {
@@ -683,9 +688,40 @@
             return arr;
         }
 
+        function bindProductCardEvents(root = document) {
+            $$("[data-open-product]", root).forEach(btn => {
+                btn.addEventListener("click", () => openProductModal(btn.getAttribute("data-open-product")));
+            });
+
+            $$(".add-to-cart", root).forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const sku = btn.getAttribute("data-sku");
+                    const p = PRODUCTS.find(x => x.sku === sku);
+                    if (!p) return;
+                    addToCart(p.sku, p.name, p.price, p.currency, p.sizes?.[0] || "-", p.colors?.[0] || "-");
+                    openCart();
+                });
+            });
+
+            $$("[data-favorite-sku]", root).forEach(btn => {
+                btn.addEventListener("click", () => {
+                    toggleFavorite(btn.getAttribute("data-favorite-sku"));
+                });
+            });
+        }
+
+        function renderFavorites() {
+            const favs = loadFavorites();
+            const favProducts = PRODUCTS.filter(p => favs.includes(p.sku));
+            favoritesGrid.innerHTML = favProducts.map(productCardTemplate).join("");
+            favoritesEmpty.style.display = favProducts.length ? "none" : "block";
+            bindProductCardEvents(favoritesGrid);
+        }
+
         function renderProducts() {
             if (!productsVisible) {
                 productGrid.innerHTML = "";
+                noProductsMessage.style.display = "none";
                 productsHint.style.display = "block";
                 productsTitle.style.display = "none";
                 return;
@@ -698,10 +734,12 @@
             const sortValue = $("#tri").value;
 
             let filtered = PRODUCTS.filter(p => {
+                const name = (p.name || "").toLowerCase();
+                const desc = (p.desc || "").toLowerCase();
                 if (cat && p.category !== cat) return false;
                 if (stockOnly && !p.stock) return false;
                 if (maxPrice > 0 && p.price > maxPrice) return false;
-                if (q && !(p.name.toLowerCase().includes(q) || (p.desc || "").toLowerCase().includes(q))) return false;
+                if (q && !(name.includes(q) || desc.includes(q))) return false;
                 return true;
             });
 
@@ -709,36 +747,13 @@
 
             productsHint.style.display = "none";
             productsTitle.style.display = "block";
-            productsTitle.textContent = cat ? `• ${catLabel(cat)}` : "";
+            productsTitle.textContent = cat ? `• ${catLabel(cat)}` : (q ? `• "${q}"` : "");
+            noProductsMessage.style.display = filtered.length ? "none" : "block";
 
             productGrid.innerHTML = filtered.map(productCardTemplate).join("");
-
-            // i18n for injected content
-            applyI18n(document.documentElement.lang || "fr");
-
-            // open modal
-            $$("[data-open-product]").forEach(btn => {
-                btn.addEventListener("click", () => openProductModal(btn.getAttribute("data-open-product")));
-            });
-
-            // add to cart
-            $$(".add-to-cart").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    const sku = btn.getAttribute("data-sku");
-                    const p = PRODUCTS.find(x => x.sku === sku);
-                    if (!p) return;
-
-                    // taille/couleur par défaut si pas via modal
-                    const size = p.sizes?.[0] || "-";
-                    const color = p.colors?.[0] || "-";
-
-                    addToCart(p.sku, p.name, p.price, p.currency, size, color);
-                    openCart();
-                });
-            });
+            bindProductCardEvents(productGrid);
         }
 
-        // Cat buttons
         $$(".catbtn").forEach(b => {
             b.addEventListener("click", () => {
                 currentCategory = b.getAttribute("data-category") || "";
@@ -749,27 +764,19 @@
             });
         });
 
-        // Dropdown category change
         $("#catSelect").addEventListener("change", () => {
             currentCategory = $("#catSelect").value;
-            if (currentCategory) {
-                productsVisible = true;
-                renderProducts();
-            }
+            productsVisible = true;
+            renderProducts();
         });
 
-        // Search submit
         $("#searchForm").addEventListener("submit", (e) => {
             e.preventDefault();
-            if (!productsVisible) {
-                // si l'user cherche sans catégorie : on affiche tout
-                productsVisible = true;
-            }
+            productsVisible = true;
             renderProducts();
             location.hash = "#produits";
         });
 
-        // Filters
         $("#applyFilters").addEventListener("click", () => {
             productsVisible = true;
             renderProducts();
@@ -777,14 +784,15 @@
         });
 
         $("#resetFilters").addEventListener("click", () => {
-            $("#q").value = "";
+            currentCategory = "";
+            productsVisible = false;
             $("#catSelect").value = "";
+            $("#q").value = "";
             $("#prix").value = "";
             $("#stockOnly").checked = false;
             $("#tri").value = "pop";
-            currentCategory = "";
-            productsVisible = false;
             renderProducts();
+            location.hash = "#categories";
         });
 
         $("#goHome").addEventListener("click", (e) => {
@@ -793,13 +801,13 @@
             productsVisible = false;
             $("#catSelect").value = "";
             $("#q").value = "";
+            $("#prix").value = "";
+            $("#stockOnly").checked = false;
+            $("#tri").value = "pop";
             renderProducts();
             location.hash = "#categories";
         });
 
-        /**********************
-         * Modal produit + options + reviews
-         **********************/
         const pmodalOverlay = $("#pmodalOverlay");
         const pmodal = $("#pmodal");
         const pmodalClose = $("#pmodalClose");
@@ -813,37 +821,38 @@
         const pmodalColor = $("#pmodalColor");
         const pmodalAddToCart = $("#pmodalAddToCart");
         const pmodalAskWa = $("#pmodalAskWa");
-
         const reviewsList = $("#reviewsList");
         const reviewsCount = $("#reviewsCount");
         const reviewName = $("#reviewName");
         const reviewText = $("#reviewText");
         const reviewAddBtn = $("#reviewAddBtn");
-
         let currentModalProduct = null;
 
         function loadReviews() {
             try { return JSON.parse(localStorage.getItem(REVIEWS_KEY) || "{}"); }
             catch { return {}; }
         }
-        function saveReviews(data) { localStorage.setItem(REVIEWS_KEY, JSON.stringify(data)); }
+
+        function saveReviews(data) {
+            localStorage.setItem(REVIEWS_KEY, JSON.stringify(data));
+        }
 
         function renderReviewsForSku(sku) {
             const all = loadReviews();
             const list = all[sku] || [];
             reviewsCount.textContent = `(${list.length})`;
             reviewsList.innerHTML = list.map(r => `
-        <li class="review">
-          <div class="review-top">
-            <strong>${escapeHtml(r.name || "Client")}</strong>
-            <span class="muted">${escapeHtml(r.date || "")}</span>
-          </div>
-          <p>${escapeHtml(r.text || "")}</p>
-        </li>
-      `).join("");
+                <li class="review">
+                    <div class="review-top">
+                        <strong>${escapeHtml(r.name || t("review_client"))}</strong>
+                        <span class="muted">${escapeHtml(r.date || "")}</span>
+                    </div>
+                    <p>${escapeHtml(r.text || "")}</p>
+                </li>
+            `).join("");
 
             if (list.length === 0) {
-                reviewsList.innerHTML = `<li class="review muted">Aucun commentaire pour le moment.</li>`;
+                reviewsList.innerHTML = `<li class="review muted">${escapeHtml(t("no_reviews"))}</li>`;
             }
         }
 
@@ -859,56 +868,44 @@
             renderReviewsForSku(sku);
         }
 
-        function escapeHtml(s) {
-            return String(s || "")
-                .replaceAll("&", "&amp;")
-                .replaceAll("<", "&lt;")
-                .replaceAll(">", "&gt;")
-                .replaceAll('"', "&quot;")
-                .replaceAll("'", "&#039;");
-        }
-
         function openProductModal(sku) {
             const p = PRODUCTS.find(x => x.sku === sku);
             if (!p) return;
             currentModalProduct = p;
 
             pmodalTitle.textContent = p.name;
-            pmodalCat.textContent = `${catLabel(p.category)} • ${p.stock ? "En stock" : "Rupture"} • ${p.sku}`;
+            pmodalCat.textContent = `${catLabel(p.category)} • ${p.stock ? t("stock_yes") : t("stock_no")} • ${p.sku}`;
             pmodalDesc.textContent = p.desc || "";
             pmodalPrice.textContent = formatMoney(p.price, p.currency);
-
-            // sizes
             pmodalSize.innerHTML = (p.sizes || ["-"]).map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");
-            // colors
             pmodalColor.innerHTML = (p.colors || ["-"]).map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("");
 
-            // images
             const imgs = p.images || [];
-            pmodalMainImg.src = imgs[0] || "";
+            pmodalMainImg.src = imgs[0] || "images/placeholder.png";
             pmodalMainImg.alt = p.name;
+            pmodalMainImg.onerror = function () {
+                this.onerror = null;
+                this.src = "images/placeholder.png";
+            };
 
             pmodalThumbs.innerHTML = imgs.map((src, i) => `
-        <button class="thumbbtn ${i === 0 ? "active" : ""}" type="button" data-idx="${i}" aria-label="Photo ${i + 1}">
-          <img class="pmodal-thumb" src="${src}" alt="${p.name} photo ${i + 1}">
-        </button>
-      `).join("");
+                <button class="thumbbtn ${i === 0 ? "active" : ""}" type="button" data-idx="${i}" aria-label="Photo ${i + 1}">
+                    <img class="pmodal-thumb" src="${escapeHtml(src)}" alt="${escapeHtml(p.name)} photo ${i + 1}" onerror="this.onerror=null;this.src='images/placeholder.png';">
+                </button>
+            `).join("");
 
             $$(".thumbbtn", pmodalThumbs).forEach(th => {
                 th.addEventListener("click", () => {
                     const idx = Number(th.getAttribute("data-idx"));
-                    pmodalMainImg.src = imgs[idx];
+                    pmodalMainImg.src = imgs[idx] || "images/placeholder.png";
                     $$(".thumbbtn", pmodalThumbs).forEach(x => x.classList.remove("active"));
                     th.classList.add("active");
                 });
             });
 
-            // reviews
             renderReviewsForSku(p.sku);
             reviewName.value = "";
             reviewText.value = "";
-
-            // show
             pmodalOverlay.hidden = false;
             pmodal.hidden = false;
             document.body.classList.add("no-scroll");
@@ -926,7 +923,7 @@
 
         reviewAddBtn.addEventListener("click", () => {
             if (!currentModalProduct) return;
-            const name = reviewName.value.trim() || "Client";
+            const name = reviewName.value.trim() || t("review_client");
             const text = reviewText.value.trim();
             if (!text) return;
             addReview(currentModalProduct.sku, name, text);
@@ -935,45 +932,48 @@
 
         pmodalAskWa.addEventListener("click", () => {
             if (!currentModalProduct) return;
-            const msg = `Bonjour SOS STORE, j'ai une question sur ce produit:
+            const msg = `${t("wa_hello")}
 - ${currentModalProduct.name} (${currentModalProduct.sku})
-- Taille: ${pmodalSize.value}
-- Couleur: ${pmodalColor.value}`;
+- ${t("wa_size")}: ${pmodalSize.value}
+- ${t("wa_color")}: ${pmodalColor.value}`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
         });
 
-        /**********************
-         * Panier + checkout WhatsApp
-         **********************/
         const cartBtn = $(".cart-button");
         const cartPanel = $("#panier");
         const cartClose = $(".cart-close");
+        const cartItemsEl = $("#cartItems");
+        const cartEmptyEl = $("#cartEmpty");
+        const cartTotalEl = $("#cartTotal");
+        const cartCountEl = $(".cart-count");
 
         function openCart() {
             cartPanel?.setAttribute("data-open", "true");
             cartBtn?.setAttribute("aria-expanded", "true");
         }
+
         function closeCart() {
             cartPanel?.removeAttribute("data-open");
             cartBtn?.setAttribute("aria-expanded", "false");
         }
+
         cartBtn?.addEventListener("click", () => {
             const isOpen = cartPanel?.getAttribute("data-open") === "true";
             isOpen ? closeCart() : openCart();
         });
+
         cartClose?.addEventListener("click", closeCart);
 
         function loadCart() {
             try { return JSON.parse(localStorage.getItem(CART_KEY) || "{}"); }
             catch { return {}; }
         }
-        function saveCart(c) { localStorage.setItem(CART_KEY, JSON.stringify(c)); }
-        let cart = loadCart();
 
-        const cartItemsEl = $("#cartItems");
-        const cartEmptyEl = $("#cartEmpty");
-        const cartTotalEl = $("#cartTotal");
-        const cartCountEl = $(".cart-count");
+        function saveCart(c) {
+            localStorage.setItem(CART_KEY, JSON.stringify(c));
+        }
+
+        let cart = loadCart();
 
         function calcCart() {
             let total = 0, count = 0, currency = "€";
@@ -996,27 +996,28 @@
                 cartItemsEl.innerHTML = "";
                 return;
             }
+
             cartEmptyEl.style.display = "none";
 
             cartItemsEl.innerHTML = keys.map((id) => {
                 const it = cart[id];
                 const lineTotal = it.price * it.qty;
                 return `
-          <li class="cart-item" data-id="${id}">
-            <div>
-              <p class="item-name">${escapeHtml(it.name)}</p>
-              <p class="item-sku">${escapeHtml(it.sku)} • ${escapeHtml(it.size)} • ${escapeHtml(it.color)}</p>
-            </div>
-            <div class="item-controls">
-              <label>
-                Qté
-                <input type="number" min="1" value="${it.qty}" data-qty />
-              </label>
-              <p class="item-price">${formatMoney(lineTotal, it.currency)}</p>
-              <button type="button" data-remove>Retirer</button>
-            </div>
-          </li>
-        `;
+                    <li class="cart-item" data-id="${escapeHtml(id)}">
+                        <div>
+                            <p class="item-name">${escapeHtml(it.name)}</p>
+                            <p class="item-sku">${escapeHtml(it.sku)} • ${escapeHtml(it.size)} • ${escapeHtml(it.color)}</p>
+                        </div>
+                        <div class="item-controls">
+                            <label>
+                                ${t("qty")}
+                                <input type="number" min="1" value="${it.qty}" data-qty />
+                            </label>
+                            <p class="item-price">${formatMoney(lineTotal, it.currency)}</p>
+                            <button type="button" data-remove>${t("remove")}</button>
+                        </div>
+                    </li>
+                `;
             }).join("");
 
             $$("[data-qty]", cartItemsEl).forEach((input) => {
@@ -1024,8 +1025,7 @@
                     const li = e.target.closest(".cart-item");
                     const id = li?.getAttribute("data-id");
                     if (!id || !cart[id]) return;
-                    const v = Math.max(1, Number(e.target.value || 1));
-                    cart[id].qty = v;
+                    cart[id].qty = Math.max(1, Number(e.target.value || 1));
                     saveCart(cart);
                     renderCart();
                 });
@@ -1043,7 +1043,6 @@
             });
         }
 
-        // id unique par produit + taille + couleur
         function makeCartId(sku, size, color) {
             return `${sku}__${size}__${color}`.replaceAll(" ", "_");
         }
@@ -1056,9 +1055,6 @@
             renderCart();
         }
 
-        renderCart();
-
-        // modal -> add to cart with selected size/color
         pmodalAddToCart.addEventListener("click", () => {
             if (!currentModalProduct) return;
             addToCart(
@@ -1073,7 +1069,6 @@
             closeProductModal();
         });
 
-        // Checkout modal
         const checkoutBtn = $("#checkoutBtn");
         const checkoutModal = $("#checkoutModal");
         const checkoutOverlay = $("#checkoutOverlay");
@@ -1083,11 +1078,15 @@
 
         function openCheckout() {
             const { count } = calcCart();
-            if (count === 0) { alert("Votre panier est vide."); return; }
+            if (count === 0) {
+                alert(t("alert_empty_cart"));
+                return;
+            }
             checkoutModal.hidden = false;
             checkoutOverlay.hidden = false;
             document.body.classList.add("no-scroll");
         }
+
         function closeCheckout() {
             checkoutModal.hidden = true;
             checkoutOverlay.hidden = true;
@@ -1102,36 +1101,32 @@
         function buildWhatsAppMessage(customer) {
             const keys = Object.keys(cart);
             const { total, currency } = calcCart();
-
             const lines = keys.map((id) => {
                 const it = cart[id];
                 const line = it.price * it.qty;
-                return `• ${it.name} (${it.sku}) | Taille: ${it.size} | Couleur: ${it.color} x${it.qty} = ${line.toFixed(2)} ${currency}`;
+                return `• ${it.name} (${it.sku}) | ${t("wa_size")}: ${it.size} | ${t("wa_color")}: ${it.color} x${it.qty} = ${line.toFixed(2)} ${currency}`;
             }).join("\n");
 
-            return (
-                `🛒 SOS STORE — Commande
+            return `${t("wa_order_title")}
 
-📦 Produits:
+${t("wa_products")}:
 ${lines}
 
-💰 Total: ${total.toFixed(2)} ${currency}
+${t("wa_total")}: ${total.toFixed(2)} ${currency}
 
-👤 Client:
-Nom: ${customer.name}
-Téléphone: ${customer.phone}
-Adresse: ${customer.address}
-Paiement: ${customer.pay}
-Note: ${customer.note || "-"}
+${t("wa_client")}:
+${t("wa_name")}: ${customer.name}
+${t("wa_phone")}: ${customer.phone}
+${t("wa_address")}: ${customer.address}
+${t("wa_payment")}: ${customer.pay}
+${t("wa_note")}: ${customer.note || "-"}
 
 TikTok: @SOSnouakchott
-Snap: @SOSNKT1`
-            );
+Snap: @SOSNKT1`;
         }
 
         function openWhatsApp(message) {
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-            window.open(url, "_blank");
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
         }
 
         confirmWhatsApp?.addEventListener("click", () => {
@@ -1144,7 +1139,7 @@ Snap: @SOSNKT1`
             };
 
             if (!customer.name || !customer.phone || !customer.address) {
-                alert("Veuillez remplir Nom, Téléphone et Adresse.");
+                alert(t("alert_checkout_fields"));
                 return;
             }
 
@@ -1152,8 +1147,31 @@ Snap: @SOSNKT1`
             closeCheckout();
         });
 
-        // init: hide products
+        document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            if (!pmodal.hidden) closeProductModal();
+            if (!checkoutModal.hidden) closeCheckout();
+            if (cartPanel?.getAttribute("data-open") === "true") closeCart();
+        });
+
+        const langBtns = Array.from(document.querySelectorAll(".langbtn"));
+        langBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                langBtns.forEach(x => x.classList.remove("active"));
+                btn.classList.add("active");
+                const lang = btn.getAttribute("data-lang") || "fr";
+                localStorage.setItem("sos_lang", lang);
+                applyI18n(lang);
+            });
+        });
+
+        const savedLang = localStorage.getItem("sos_lang") || "fr";
+        langBtns.forEach(btn => btn.classList.toggle("active", btn.getAttribute("data-lang") === savedLang));
+
         renderProducts();
+        renderFavorites();
+        renderCart();
+        applyI18n(savedLang);
     </script>
 </body>
 
