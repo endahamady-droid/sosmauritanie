@@ -785,7 +785,7 @@
 
         $("#resetFilters").addEventListener("click", () => {
             currentCategory = "";
-            productsVisible = false;
+            productsVisible = true;
             $("#catSelect").value = "";
             $("#q").value = "";
             $("#prix").value = "";
@@ -798,7 +798,7 @@
         $("#goHome").addEventListener("click", (e) => {
             e.preventDefault();
             currentCategory = "";
-            productsVisible = false;
+            productsVisible = true;
             $("#catSelect").value = "";
             $("#q").value = "";
             $("#prix").value = "";
@@ -1176,4 +1176,5 @@ Snap: @SOSNKT1`;
 </body>
 
 </html>
+
 
