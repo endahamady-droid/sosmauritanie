@@ -153,8 +153,7 @@ textarea {
    ========================= */
 
 .site-header {
-    position: sticky;
-    top: 0;
+    position: static;
     z-index: 1000;
     width: 100%;
     backdrop-filter: blur(12px);
@@ -1279,3 +1278,4 @@ body:dir(rtl) .cart[data-open="true"] {
         text-align: center;
     }
 }
+
