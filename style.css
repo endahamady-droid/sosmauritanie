@@ -152,8 +152,9 @@ textarea {
    HEADER
    ========================= */
 
-.site-header {
-    position: static;
+site-header {
+    position: sticky;
+    top: 0;
     z-index: 1000;
     width: 100%;
     backdrop-filter: blur(12px);
@@ -161,7 +162,6 @@ textarea {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
 }
-
 .header-inner {
     display: grid;
     grid-template-columns: 1fr minmax(260px, 520px) 1fr;
@@ -1278,5 +1278,6 @@ body:dir(rtl) .cart[data-open="true"] {
         text-align: center;
     }
 }
+
 
 
