@@ -152,13 +152,22 @@ textarea {
    HEADER
    ========================= */
 
-.site-header {
+.site-header{
     position: sticky;
     top: 0;
-    z-index: 90;
-    backdrop-filter: blur(14px);
-    background: rgba(11, 11, 12, .76);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+    background: rgba(11,11,12,0.95);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.search{
+    position: relative;
+    z-index: 1001;
+}
+.site-header{
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
 }
 
 .header-inner {
@@ -1230,3 +1239,4 @@ body:dir(rtl) .cart[data-open="true"] {
         text-align: center;
     }
 }
+
