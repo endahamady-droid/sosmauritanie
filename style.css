@@ -1,6 +1,7 @@
 /* =========================
    SOS Boutique — style.css
-   Version complète compatible
+   Version complète corrigée
+   Header fixe + recherche stable
    ========================= */
 
 *,
@@ -41,6 +42,7 @@ html {
 
 body {
     margin: 0;
+    padding-top: 98px;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     line-height: 1.5;
     background: var(--bg);
@@ -136,7 +138,6 @@ textarea {
     top: 16px;
 }
 
-.header-inner,
 .section-header,
 .category-grid,
 .product-grid,
@@ -149,12 +150,14 @@ textarea {
 }
 
 /* =========================
-   HEADER
+   HEADER FIXE
    ========================= */
 
-site-header {
-    position: sticky;
+.site-header {
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     width: 100%;
     backdrop-filter: blur(12px);
@@ -162,7 +165,10 @@ site-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
 }
+
 .header-inner {
+    width: min(var(--max), calc(100% - 40px));
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr minmax(260px, 520px) 1fr;
     gap: 16px;
@@ -586,13 +592,12 @@ site-header {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    transform: scale(1.01);
     transition: transform .45s var(--ease);
 }
 
 .product-card:hover .product-card-mainimg,
 .product-card:hover .product-media img {
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
 
 .product-body {
@@ -978,7 +983,7 @@ site-header {
     background: rgba(11, 11, 12, .94);
     border-left: 1px solid rgba(255, 255, 255, .10);
     box-shadow: -20px 0 60px rgba(0, 0, 0, .55);
-    z-index: 60;
+    z-index: 1100;
     display: grid;
     grid-template-rows: auto 1fr auto;
     backdrop-filter: blur(14px);
@@ -1081,7 +1086,7 @@ site-header {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, .6);
-    z-index: 200;
+    z-index: 2000;
 }
 
 .checkout-modal {
@@ -1094,7 +1099,7 @@ site-header {
     border: 1px solid rgba(255, 255, 255, .12);
     border-radius: 18px;
     box-shadow: 0 18px 60px rgba(0, 0, 0, .55);
-    z-index: 210;
+    z-index: 2100;
 }
 
 .checkout-head {
@@ -1187,6 +1192,10 @@ body:dir(rtl) .cart[data-open="true"] {
 }
 
 @media (max-width: 980px) {
+    body {
+        padding-top: 165px;
+    }
+
     .header-inner {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1214,6 +1223,10 @@ body:dir(rtl) .cart[data-open="true"] {
 }
 
 @media (max-width: 620px) {
+    body {
+        padding-top: 210px;
+    }
+
     .hero-content {
         padding: 28px 18px;
     }
@@ -1263,6 +1276,10 @@ body:dir(rtl) .cart[data-open="true"] {
 }
 
 @media (max-width: 420px) {
+    body {
+        padding-top: 230px;
+    }
+
     .category-grid,
     .product-grid {
         grid-template-columns: 1fr;
@@ -1278,6 +1295,3 @@ body:dir(rtl) .cart[data-open="true"] {
         text-align: center;
     }
 }
-
-
-
